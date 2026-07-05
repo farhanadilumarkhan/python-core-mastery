@@ -1,6 +1,6 @@
 # 🚀 Python Core to Advanced OOP: Mastery Projects
 
-Welcome to my Python foundational and architectural showcase repository. This repository features three distinct terminal-based applications built progressively to demonstrate a transition from procedural programming and basic data structures to system automation, file manipulation, exception handling, and **Object-Oriented Programming (OOP)**.
+Welcome to my Python foundational and architectural showcase repository. This repository features four distinct terminal-based applications built progressively to demonstrate a transition from procedural programming and basic data structures to system automation, file manipulation, exception handling, data engineering streams, and **Object-Oriented Programming (OOP)**.
 
 Each project focuses on real-world logic, clean code architecture, and robust edge-case handling.
 
@@ -21,75 +21,91 @@ Python-Core-Projects/
 ├── 03_Banking_System_OOP/
 │   └── banking_system.py            # Advanced Multi-user OOP simulation
 │
+├── 04_Log_Security_Auditor/
+│   ├── log_auditor.py               # Enterprise Log Parsing & Regex Security Audit
+│   └── server.log                   # Raw production log stream file
+│
 └── README.md                        # Project documentation
 
-🛠️ Detailed Project Breakdown
-------------------------------
+## 🛠️ Detailed Project Breakdown
 
 ### 📦 1. Inventory Management System
 
-*   **Core Concepts Covered:** while loops, conditional flows (if-elif-else), Python Dictionaries, Dynamic User Input.
+* **Core Concepts Covered:** `while` loops, conditional flows (`if-elif-else`), Python Dictionaries, Dynamic User Input.
     
-*   **Architecture:** Implements a stable terminal-based **CRUD (Create, Read, Update, Delete)** engine.
+* **Architecture:** Implements a stable terminal-based **CRUD (Create, Read, Update, Delete)** engine.
     
-*   **Key Features:**
+* **Key Features:**
     
-    *   Interactive CLI menu allowing continuous operations.
+    * Interactive CLI menu allowing continuous operations.
         
-    *   Memory-mapped state management using dictionary key-value pairing to keep track of product quantities.
+    * Memory-mapped state management using dictionary key-value pairing to keep track of product quantities.
         
-    *   Graceful data pruning using safe dictionary element deletions via del.
+    * Graceful data pruning using safe dictionary element deletions via `del`.
         
 
 ### 📝 2. Student Grading System with File I/O
 
-*   **Core Concepts Covered:** Data Persistence (with open), String Parsing & Tokenization (.strip(), .split()), Casting, Robust Exception Handling (try-except).
+* **Core Concepts Covered:** Data Persistence (`with open`), String Parsing & Tokenization (`.strip()`, `.split()`), Casting, Robust Exception Handling (`try-except`).
     
-*   **Architecture:** Bridges the gap between volatile memory and permanent storage by serializing structural flat-file streams.
+* **Architecture:** Bridges the gap between volatile memory and permanent storage by serializing structural flat-file streams.
     
-*   **Key Features:**
+* **Key Features:**
     
-    *   **File Persistence:** Appends user records automatically into a flat .txt file, maintaining records across system restarts.
+    * **File Persistence:** Appends user records automatically into a flat `.txt` file, maintaining records across system restarts.
         
-    *   **Data Cleansing:** Parses incoming data streams by removing hidden whitespace / newline characters (\\n) to safely execute operations.
+    * **Data Cleansing:** Parses incoming data streams by removing hidden whitespace / newline characters (`\n`) to safely execute operations.
         
-    *   **Fail-Safe Crash Guard:** Intercepts potential runtime failures (like missing physical files using FileNotFoundError) ensuring continuous operation.
+    * **Fail-Safe Crash Guard:** Intercepts potential runtime failures (like missing physical files using `FileNotFoundError`) ensuring continuous operation.
         
 
 ### 🏛️ 3. Central Banking & ATM Simulator (OOP Architecture)
 
-*   **Core Concepts Covered:** Object-Oriented Design (OOP), Constructors (\_\_init\_\_), Instance Scope & Context Binding (self), In-Memory Complex Dictionary Mappings.
+* **Core Concepts Covered:** Object-Oriented Design (OOP), Constructors (`__init__`), Instance Scope & Context Binding (`self`), In-Memory Complex Dictionary Mappings.
     
-*   **Architecture:** An industry-standard simulation modeled around real-world business items. Instead of primitive data tracking, this engine maps string keys directly to functional **Account Instances (Objects)** inside an encapsulated virtual database.
+* **Architecture:** An industry-standard simulation modeled around real-world business items. Instead of primitive data tracking, this engine maps string keys directly to functional **Account Instances (Objects)** inside an encapsulated virtual database.
     
-*   **Key Features:**
+* **Key Features:**
     
-    *   **Encapsulation:** State parameters (holder\_name, balance) are self-contained and manipulated strictly through defined instance behaviors (deposit(), withdraw()).
+    * **Encapsulation:** State parameters (`holder_name`, `balance`) are self-contained and manipulated strictly through defined instance behaviors (`deposit()`, `withdraw()`).
         
-    *   **Transaction Integrity Guards:** Prevents illegal business logic states (e.g., overdraft blocking with an insufficient balance handler).
+    * **Transaction Integrity Guards:** Prevents illegal business logic states (e.g., overdraft blocking with an insufficient balance handler).
         
-    *   **Multi-Tenant System:** Scalable dynamic account registry. Mutating one user entity's balance maintains data isolation from other parallel objects.
+    * **Multi-Tenant System:** Scalable dynamic account registry. Mutating one user entity's balance maintains data isolation from other parallel objects.
         
 
-🚀 Technical Highlights & Key Learnings
----------------------------------------
+### 🔍 4. Enterprise Log & Security Auditor (ELSA)
+
+* **Core Concepts Covered:** Stream Ingestion (`.readlines()`), Advanced Regular Expressions (`re`), Strict Token Boundaries, Data Engineering ETL Pipelines.
+    
+* **Architecture:** A robust threat-intelligence backend utility representing data pipelines. It ingests an external multi-line unstructured `.log` stream file, applies strict compilation vectors to extract metrics, and structures raw data for security analysts.
+    
+* **Key Features:**
+    
+    * **Safe Stream Processing:** Avoids memory leaks and greediness errors by parsing logs sequentially using line-by-line streaming pipelines.
+        
+    * **Advanced Regex Pattern Matching:** Automatically tokenizes network footprints (IPs), extracts validated company/malicious emails, and isolates financial transaction codes (`TXN_ID`).
+        
+    * **Deduplication Mechanics:** Leverages memory-efficient `set()` hashing algorithms to instantly filter out repeating transactional and server footprint redundancies.
+        
+
+## 🚀 Technical Highlights & Key Learnings
 
 Throughout developing this core pipeline, I have mastered:
 
-1.  **Dynamic Memory vs Persistent State:** Understanding when to use volatile runtime structures (Dictionaries) versus non-volatile serialized IO boundaries (Files).
+1. **Dynamic Memory vs Persistent State:** Understanding when to use volatile runtime structures (Dictionaries) versus non-volatile serialized IO boundaries (Files & Logs).
     
-2.  **Defensive Coding Practices:** Writing predictable, clean code by implementing granular validation conditionals and explicit type conversions (int()).
+2. **Defensive Coding Practices:** Writing predictable, clean code by implementing granular validation conditionals, advanced regular expressions, and explicit type conversions.
     
-3.  **The OOP Shift:** Moving away from sequential execution blocks toward building modular, reusable blueprints (Classes) that control their own internal data mutations.
+3. **The OOP Shift:** Moving away from sequential execution blocks toward building modular, reusable blueprints (Classes) that control their own internal data mutations.
+    
+4. **ETL & Unstructured Parsing:** Building foundational skills necessary for Data Engineering by managing raw, unstructured text files and preparing clean datasets.
     
 
-💻 How To Run Locally
----------------------
+## 💻 How To Run Locally
 
-1.  Bashgit clone \[https://github.com/farhanadilumarkhan/python-core-mastery.git](https://github.com/farhanadilumarkhan/python-core-mastery.git)
+Clone the repository and navigate to the project directory:
+
+```bash
+git clone [https://github.com/farhanadilumarkhan/python-core-mastery.git](https://github.com/farhanadilumarkhan/python-core-mastery.git)
 cd Python-Core-Projects
-    
-2.  Bashpython 03\_Banking\_System\_OOP/banking\_system.py
-    
-
-_Developed as part of my advanced Python Engineering track._
